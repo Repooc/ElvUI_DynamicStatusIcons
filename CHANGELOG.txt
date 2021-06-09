@@ -1,3 +1,4 @@
-v1.0 6/8/2021
+v1.02 6/8/2021
 
-Initial Release
+Fixes:
+- Fix issue where target indicator wasn't working correctly

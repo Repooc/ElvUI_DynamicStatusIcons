@@ -136,33 +136,54 @@ function DSI:CreateUpdateIconGallery()
 		end
 	end
 
-	for _, unit in pairs(supportedFrames) do
-		E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args = {}
-		E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args.currentlySelected = {
-			order = 2,
-			type = 'description',
-			name = function()
-				local iconpack = E.db.unitframe.units[unit].DynamicStatusIcons.iconpack
+	E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args = {}
+	E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args.currentlySelected = {
+		order = 2,
+		type = 'description',
+		name = function()
+			local iconpack = E.db.unitframe.units.player.DynamicStatusIcons.iconpack
 
-				if iconDB[iconpack].valid then
-					local icon = iconDB[iconpack].path..iconpack
-					return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
-				else
-					return ''
-				end
-
-			end,
-		}
-		for pack, packtbl in next, collectPacks do
-			E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args[pack] = {
-				order = 5,
-				type = 'group',
-				name = pack,
-				args = {}
-			}
-			for packtype, typetbl in next, packtbl do
-				E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'player', packtype, typetbl)
+			if iconDB[iconpack].valid then
+				local icon = iconDB[iconpack].path..iconpack
+				return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
+			else
+				return ''
 			end
+
+		end,
+	}
+	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args = {}
+	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args.currentlySelected = {
+		order = 2,
+		type = 'description',
+		name = function()
+			local iconpack = E.db.unitframe.units.target.DynamicStatusIcons.iconpack
+
+			if iconDB[iconpack].valid then
+				local icon = iconDB[iconpack].path..iconpack
+				return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
+			else
+				return ''
+			end
+		end,
+	}
+
+	for pack, packtbl in next, collectPacks do
+		E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args[pack] = {
+			order = 5,
+			type = 'group',
+			name = pack,
+			args = {}
+		}
+		E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args[pack] = {
+			order = 5,
+			type = 'group',
+			name = pack,
+			args = {}
+		}
+		for packtype, typetbl in next, packtbl do
+			E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'player', packtype, typetbl)
+			E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'target', packtype, typetbl)
 		end
 	end
 end
@@ -170,20 +191,43 @@ end
 local function configTable()
 	local myClassColor = E:ClassColor(E.myclass, true)
 
-	for _, unit in pairs(supportedFrames) do
-		E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons = {
-			type = 'group',
-			name = '|c'..myClassColor.colorStr..L["Dynamic Status Icons"]..'|r',
-			childGroups = 'tab',
-			get = function(info) return E.db.unitframe.units[unit].DynamicStatusIcons[info[#info]] end,
-			set = function(info, value)
-				E.db.unitframe.units[unit].DynamicStatusIcons[info[#info]] = value
-				UF:CreateAndUpdateUF(unit)
-			end,
-			args = GetSharedOptions(unit)
-		}
-	end
+	E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons = {
+		type = 'group',
+		name = '|c'..myClassColor.colorStr..'Dynamic Status Icons'..'|r',
+		childGroups = 'tab',
+		get = function(info) return E.db.unitframe.units.player.DynamicStatusIcons[info[#info]] end,
+		set = function(info, value)
+			E.db.unitframe.units.player.DynamicStatusIcons[info[#info]] = value
+			UF:CreateAndUpdateUF('player')
+		end,
+		args = GetSharedOptions('player')
+	}
+	E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery = {
+		order = 10,
+		type = 'group',
+		name = L['Glorious Icon Gallery'],
+		childGroups = 'tree',
+		args = {}
+	}
 
+	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons = {
+		type = 'group',
+		name = '|c'..myClassColor.colorStr..'Dynamic Status Icons'..'|r',
+		childGroups = 'tab',
+		get = function(info) return E.db.unitframe.units.target.DynamicStatusIcons[info[#info]] end,
+		set = function(info, value)
+			E.db.unitframe.units.target.DynamicStatusIcons[info[#info]] = value
+			UF:CreateAndUpdateUF('target')
+		end,
+		args = GetSharedOptions('target')
+	}
+	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery = {
+		order = 10,
+		type = 'group',
+		name = L['Glorious Icon Gallery'],
+		childGroups = 'tree',
+		args = {}
+	}
 	DSI:CreateUpdateIconGallery()
 end
 
