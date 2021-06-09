@@ -1,0 +1,4 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Include file='oUF_DynamicStatusIcons\Load_DynamicStatusIcons.xml'/>
+	<Script file='LibAceConfigHelper\LibAceConfigHelper.lua'/>
+</Ui>
