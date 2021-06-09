@@ -1,0 +1,7 @@
+<Ui xmlns='http://www.blizzard.com/wow/ui/'>
+	<Script file='DynamicCombatIcon.lua'/>
+	<Script file='DynamicDeadIcon.lua'/>
+	<Script file='DynamicNormalIcon.lua'/>
+	<Script file='DynamicRestingIcon.lua'/>
+	<Script file='DynamiczZzIcon.lua'/>
+</Ui>
