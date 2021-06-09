@@ -117,39 +117,6 @@ function DSI:CreateUpdateIconGallery()
 	local collectPacks = {}
 	local iconDB = DSI:GetIconList()
 
-	E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args = {}
-	E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args.currentlySelected = {
-		order = 2,
-		type = 'description',
-		name = function()
-			local iconpack = E.db.unitframe.units.player.DynamicStatusIcons.iconpack
-
-			if iconDB[iconpack].valid then
-				local icon = iconDB[iconpack].path..iconpack
-				return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
-			else
-				return ''
-			end
-
-		end,
-	}
-
-	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args = {}
-	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args.currentlySelected = {
-		order = 2,
-		type = 'description',
-		name = function()
-			local iconpack = E.db.unitframe.units.target.DynamicStatusIcons.iconpack
-
-			if iconDB[iconpack].valid then
-				local icon = iconDB[iconpack].path..iconpack
-				return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
-			else
-				return ''
-			end
-		end,
-	}
-
 	do
 		for iconkey, icontbl in next, iconDB do
 			if icontbl.valid then
@@ -169,28 +136,38 @@ function DSI:CreateUpdateIconGallery()
 		end
 	end
 
-	for pack, packtbl in next, collectPacks do
-		E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args[pack] = {
-			order = 5,
-			type = 'group',
-			name = pack,
-			args = {}
+	for _, unit in pairs(supportedFrames) do
+		E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args = {}
+		E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args.currentlySelected = {
+			order = 2,
+			type = 'description',
+			name = function()
+				local iconpack = E.db.unitframe.units[unit].DynamicStatusIcons.iconpack
+
+				if iconDB[iconpack].valid then
+					local icon = iconDB[iconpack].path..iconpack
+					return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
+				else
+					return ''
+				end
+
+			end,
 		}
-		E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args[pack] = {
-			order = 5,
-			type = 'group',
-			name = pack,
-			args = {}
-		}
-		for packtype, typetbl in next, packtbl do
-			E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'player', packtype, typetbl)
-			E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'target', packtype, typetbl)
+		for pack, packtbl in next, collectPacks do
+			E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args[pack] = {
+				order = 5,
+				type = 'group',
+				name = pack,
+				args = {}
+			}
+			for packtype, typetbl in next, packtbl do
+				E.Options.args.unitframe.args.individualUnits.args[unit].args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'player', packtype, typetbl)
+			end
 		end
 	end
 end
 
 local function configTable()
-	-- local ACH = E.Libs.ACH
 	local myClassColor = E:ClassColor(E.myclass, true)
 
 	for _, unit in pairs(supportedFrames) do
