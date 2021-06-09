@@ -1,11 +1,13 @@
 ## Interface: 90005
 ## Title: |cff1784d1ElvUI|r |cff9482c9Dynamic Status Icons|r
 ## Author: Repooc, Releaf
-## Version: 1.00
+## Version: 1.01
 ## Notes: Plugin-edit for |cff1784d1ElvUI|r adding additional resting icons.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
 ## X-ElvVersion: 12.24
+## X-Curse-Project-ID: 492330
+## X-Wago-ID: 2jK8oq6y
 
 Libraries\Load_Libraries.xml
 Init.lua
