@@ -1,3 +1,5 @@
+[![Release](https://github.com/Repooc/ElvUI_DynamicStatusIcons/actions/workflows/release.yml/badge.svg)](https://github.com/Repooc/ElvUI_DynamicStatusIcons/actions/workflows/release.yml)
+
 ### Dynamic Status Icons
 This plugin is made to work specifically with ElvUI's UnitFrames. It adds a visual indicator to show your current status such as resting, in combat, or just running around as ghost or just plain dead!  Currently we only let the Player and Target UnitFrames have the icons but will most likely enable it for other frames like focus, targettarget, etc.
 
