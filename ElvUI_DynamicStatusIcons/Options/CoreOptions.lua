@@ -80,12 +80,12 @@ local function configTable()
 			globalsection = {
 				order = 10,
 				type = 'group',
-				name = L["General Configuration"]..[[|TInterface\MINIMAP\TRACKING\OBJECTICONS:14:14:0:0:256:64:60:90:32:64|t]],
+				name = L["Configuration"]..[[|TInterface\MINIMAP\TRACKING\OBJECTICONS:14:14:0:0:256:64:60:90:32:64|t]],
 				args = {
 					header = {
 						order = 1,
 						type = 'header',
-						name = L["General Configuration"],
+						name = L["Configuration"],
 					},
 					globalsettings = {
 						order = 5,
