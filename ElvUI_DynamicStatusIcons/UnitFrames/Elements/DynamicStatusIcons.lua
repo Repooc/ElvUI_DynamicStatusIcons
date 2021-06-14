@@ -76,7 +76,8 @@ function UF:Configure_DynamicStatusIcons(frame)
 	local db = frame.db.DynamicStatusIcons
 	local iconDB = DSI:GetIconList()
 
-	local path = iconDB[db.iconpack].path..db.iconpack
+	local iconpack = iconDB[db.iconpack] and db.iconpack or 'Pepe'
+	local path = iconDB[iconpack].path..iconpack
 
 	if db and db.enable then
 		iconAnchor:Show()

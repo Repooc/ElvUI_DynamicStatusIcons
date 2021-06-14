@@ -143,13 +143,15 @@ function DSI:CreateUpdateIconGallery()
 		name = function()
 			local iconpack = E.db.unitframe.units.player.DynamicStatusIcons.iconpack
 
-			if iconDB[iconpack].valid then
-				local icon = iconDB[iconpack].path..iconpack
-				return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
-			else
-				return ''
-			end
+			local icon = (iconDB[iconpack] and iconDB[iconpack].valid) and iconDB[iconpack].path..iconpack or iconDB['Pepe'].path..'Pepe'
 
+			-- if iconDB[iconpack] and iconDB[iconpack].valid then
+			-- 	icon = iconDB[iconpack].path..iconpack
+			-- else
+			-- 	icon = iconDB['Pepe'].path..'Pepe'
+			-- end
+
+			return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
 		end,
 	}
 	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args = {}
@@ -159,12 +161,9 @@ function DSI:CreateUpdateIconGallery()
 		name = function()
 			local iconpack = E.db.unitframe.units.target.DynamicStatusIcons.iconpack
 
-			if iconDB[iconpack].valid then
-				local icon = iconDB[iconpack].path..iconpack
-				return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
-			else
-				return ''
-			end
+			local icon = (iconDB[iconpack] and iconDB[iconpack].valid) and iconDB[iconpack].path..iconpack or iconDB['Pepe'].path..'Pepe'
+
+			return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
 		end,
 	}
 
