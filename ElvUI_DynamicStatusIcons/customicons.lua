@@ -41,58 +41,52 @@ DSI.customIcons = {
 	},
 	--! Additional Icons (Not Shipped w/ DSI)
 	--* Heroes
-	['Pepe - Bolvar'] = {
+	['Pepe - Heroes - Bolvar'] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
-		name = 'Bolvar',
+		name = 'Bolvar Fordragon',
 		additionalPack = true,
 	},
-	['Pepe - Elisande'] = {
+	['Pepe - Heroes - Elisande'] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
 		name = 'Elisande',
 		additionalPack = true,
 	},
-	["Pepe - Kael'Thas"] = {
+	["Pepe - Heroes - Kael'Thas"] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
-		name = "Kael'Thas",
+		name = "Kael'Thas Sunstrider",
 		additionalPack = true,
 	},
-	['Pepe - Lich King'] = {
+	['Pepe - Heroes - Lich King'] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
-		name = 'Lich King',
+		name = 'the Lich King',
 		additionalPack = true,
 	},
-	['Pepe - Ragnaros'] = {
+	['Pepe - Heroes - Ragnaros'] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
 		name = 'Ragnaros',
 		additionalPack = true,
 	},
-	['Pepe - Saurfang'] = {
+	['Pepe - Heroes - Saurfang'] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
-		name = 'Saurfang',
+		name = 'Varok Saurfang',
 		additionalPack = true,
 	},
-	['Pepe - Sire Denathrius'] = {
+	['Pepe - Heroes - Sire Denathrius'] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
 		name = 'Sire Denathrius',
 		additionalPack = true,
 	},
-	['Pepe - Sylvanas'] = {
+	['Pepe - Heroes - Sylvanas'] = {
 		pack = 'Heroes',
 		packtype = 'Pepe',
-		name = 'Sylvanas',
-		additionalPack = true,
-	},
-	['Murloc - Demon Hunter'] = {
-		pack = 'Myshit',
-		packtype = 'Murlocs',
-		name = 'Demon Hunter',
+		name = 'Sylvanas Windrunner',
 		additionalPack = true,
 	},
 	['Sadie - Pepe - Rogue (Horde)'] = {
@@ -105,6 +99,12 @@ DSI.customIcons = {
 		pack = 'Sadie',
 		packtype = 'BDSM',
 		name = 'Mistress Sadie',
+		additionalPack = true,
+	},
+	['Xui - Pepe - SadCat'] = {
+		pack = 'Xui',
+		packtype = 'Sad Cat',
+		name = 'Sad Cat',
 		additionalPack = true,
 	},
 }
