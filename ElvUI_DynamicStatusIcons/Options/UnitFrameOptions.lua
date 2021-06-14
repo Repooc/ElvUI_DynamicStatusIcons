@@ -76,7 +76,7 @@ local function GetSharedOptions(frame)
 					set = function(_, r, g, b, a)
 						local c = E.db.unitframe.units[frame].DynamicStatusIcons.color
 						c.r, c.g, c.b, c.a = r, g, b, a
-						UF:CreateAndUpdateUF(frame);
+						UF:CreateAndUpdateUF(frame)
 					end,
 				},
 			}
