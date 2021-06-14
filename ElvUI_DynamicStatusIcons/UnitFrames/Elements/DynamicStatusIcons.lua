@@ -89,7 +89,7 @@ function UF:Configure_DynamicStatusIcons(frame)
 		end
 
 		iconAnchor:ClearAllPoints()
-		if frame.ORIENTATION ~= 'RIGHT' and (frame.USE_PORTRAIT and not frame.USE_PORTRAIT_OVERLAY) then
+		if frame.USE_PORTRAIT and not frame.USE_PORTRAIT_OVERLAY then
 			iconAnchor:Point('CENTER', frame.Portrait, db.anchorPoint, db.xOffset, db.yOffset)
 		else
 			iconAnchor:Point('CENTER', frame.Health, db.anchorPoint, db.xOffset, db.yOffset)
