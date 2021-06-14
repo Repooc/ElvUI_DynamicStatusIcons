@@ -5,6 +5,12 @@ This plugin is made to work specifically with ElvUI's UnitFrames. It adds a visu
 
 The addon will feature a variety of icons to chose from starting with Pepe. These icons include all costumes available to the Trans-Dimensional Bird Whistle (Toy). There are some icons based on classes that are equipped with their first available tier sets, and many more to follow!
 
+### Issue Tracker
+[Github Issue Tracker](https://github.com/Repooc/ElvUI_DynamicStatusIcons/issues "Github Issues")
+
+### Github Discussions
+[Q&A Discussion](https://github.com/Repooc/ElvUI_DynamicStatusIcons/discussions/categories/q-a "Q&A Discussion")
+
 ### Some Generic Pepe Icons
 ![](https://repooc.github.io/ElvUI_DynamicStatusIcons/images/Default.png)
 ### Pepe Class Icons

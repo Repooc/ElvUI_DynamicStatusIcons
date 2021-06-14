@@ -1,4 +1,5 @@
-v1.03 6/10/2021
+v1.04 6/14/2021
 
-Added:
-- Classic Era Support
+Changes:
+- Some File/Folder structures changed... if manually updating, remove old version and replace with new
+- Change the anchor code a bit
