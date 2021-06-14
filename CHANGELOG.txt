@@ -1,5 +1,8 @@
-v1.04 6/14/2021
+v1.05 6/14/2021
+
+Additions:
+- Added Murloc Icons
+- Added Euro 2020 Icons
 
 Changes:
-- Some File/Folder structures changed... if manually updating, remove old version and replace with new
-- Change the anchor code a bit
+- Added some db checks to protect against invalid profile entry for iconpack being used
