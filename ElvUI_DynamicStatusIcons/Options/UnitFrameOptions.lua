@@ -94,6 +94,8 @@ local function GetSharedOptions(frame)
 end
 
 local function GetOptionsTable_IconPacks(updateFunc, groupName, packtype, typetbl)
+	local iconDB = DSI:GetIconList()
+
 	local Options = {
 		order = 10,
 		type = 'multiselect',
@@ -102,7 +104,10 @@ local function GetOptionsTable_IconPacks(updateFunc, groupName, packtype, typetb
 		customWidth = 250,
 		values = typetbl,
 		get = function(_, key)
-			return E.db.unitframe.units[groupName].DynamicStatusIcons.iconpack == key
+			local iconpack = E.db.unitframe.units[groupName].DynamicStatusIcons.iconpack
+			local selected = (iconDB[iconpack] and iconDB[iconpack].valid) and iconpack or 'Pepe'
+
+			return selected == key
 		end,
 		set = function(_, key)
 			E.db.unitframe.units[groupName].DynamicStatusIcons.iconpack = key
