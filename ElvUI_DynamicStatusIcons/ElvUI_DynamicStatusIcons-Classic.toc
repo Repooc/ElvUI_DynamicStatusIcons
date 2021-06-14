@@ -15,4 +15,5 @@ Settings\Global.lua
 Settings\Profile.lua
 UnitFrames\Elements\DynamicStatusIcons.lua
 Options\Load_Options.xml
+customicons.lua
 iconlist.lua
