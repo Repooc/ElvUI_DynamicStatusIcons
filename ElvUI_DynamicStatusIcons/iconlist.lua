@@ -176,13 +176,27 @@ local iconList = {
 }
 
 function DSI:GetIconList()
-	for key in next, iconList do
-		iconList[key].path = nil
-		iconList[key].path = DSI:GetIconPath(iconList[key].additionalPack)
+	local tempList = {}
 
-		iconList[key].valid = nil
-		iconList[key].valid = DSI:TextureExists(iconList[key].path..key..'\\Normal')
+	for key, value in next, DSI.customIcons do
+		tempList[key] = value
+
+		tempList[key].path = nil
+		tempList[key].path = DSI:GetIconPath(tempList[key].additionalPack)
+
+		tempList[key].valid = nil
+		tempList[key].valid = DSI:TextureExists(tempList[key].path..key..'\\Normal')
 	end
 
-	return iconList
+	for key, value in next, iconList do
+		tempList[key] = value
+
+		tempList[key].path = nil
+		tempList[key].path = DSI:GetIconPath(tempList[key].additionalPack)
+
+		tempList[key].valid = nil
+		tempList[key].valid = DSI:TextureExists(tempList[key].path..key..'\\Normal')
+	end
+
+	return tempList
 end
