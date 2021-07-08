@@ -113,6 +113,7 @@ function UF:Configure_DynamicStatusIcons(frame)
 		frame.DynamiczZzIcon:SetVertexColor(db.color.r, db.color.g, db.color.b, db.color.a)
 
 		iconAnchor:SetScale(db.scale)
+		iconAnchor:SetFrameLevel(db.frameLevel)
 	elseif frame:IsElementEnabled('DynamicNormalIcon') then
 		iconAnchor:Hide()
 		frame:DisableElement('DynamicCombatIcon')

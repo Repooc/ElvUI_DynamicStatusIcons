@@ -16,6 +16,7 @@ local positionValues = {
 }
 
 local function GetSharedOptions(frame)
+	local ACH = E.Libs.ACH
 	local Options = {
 		enable = {
 			order = 1,
@@ -55,13 +56,14 @@ local function GetSharedOptions(frame)
 					name = L["Anchor Point"],
 					values = positionValues,
 				},
+				frameLevel = ACH:Range(L["Frame Level"], nil, 5, { min = 1, max = 256, step = 1 }),
 				faceright = {
-					order = 5,
+					order = 6,
 					type = 'toggle',
 					name = L["Swap Direction"],
 				},
 				color = {
-					order = 5,
+					order = 6,
 					type = 'color',
 					name = COLOR,
 					hasAlpha = true,
