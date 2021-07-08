@@ -1,11 +1,4 @@
-v1.06 6/29/2021
-Release for 9.1
+v1.07 7/8/2021
 
 Additions:
-- Added Heroes & Bosses Icons
-- Added Copa America 2021 Icons
-- Added Tier 2 Sets for some classes
-- Added Moonkin Hatchling (Alliance)
-
-Changes:
-- Added some db checks to protect against invalid profile entry for iconpack being used (again, bc of releaf)
+- Added option to change frame level so it can appear over buffs for example
