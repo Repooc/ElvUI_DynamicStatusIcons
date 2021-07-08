@@ -57,13 +57,14 @@ local function GetSharedOptions(frame)
 					values = positionValues,
 				},
 				frameLevel = ACH:Range(L["Frame Level"], nil, 5, { min = 1, max = 256, step = 1 }),
+				frameStrata = ACH:Select(L["Frame Strata"], nil, 6, { BACKGROUND = 'BACKGROUND', LOW = 'LOW', MEDIUM = 'MEDIUM', HIGH = 'HIGH', DIALOG = 'DIALOG', TOOLTIP = 'TOOLTIP' }),
 				faceright = {
-					order = 6,
+					order = 7,
 					type = 'toggle',
 					name = L["Swap Direction"],
 				},
 				color = {
-					order = 6,
+					order = 8,
 					type = 'color',
 					name = COLOR,
 					hasAlpha = true,

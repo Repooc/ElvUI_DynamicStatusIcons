@@ -5,6 +5,7 @@ local sharedOptions = {
 	iconpack = "Pepe - Pepe'jin",
 	anchorPoint = 'TOP',
 	frameLevel = 100,
+	frameStrata = 'MEDIUM',
 	xOffset = -3,
 	yOffset = 6,
 	scale = 1,
