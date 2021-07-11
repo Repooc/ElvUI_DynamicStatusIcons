@@ -9,6 +9,11 @@ local iconList = {
 		packtype = 'Moonkin Hatchling',
 		name = 'Alliance',
 	},
+	['Battle Pets - Moonkin Hatchling - Horde'] = {
+		pack = {'Stock Icons', 'Battle Pets'},
+		packtype = 'Moonkin Hatchling',
+		name = 'Horde',
+	},
 	['Battle Pets - Murloc - Finduin'] = {
 		pack = {'Stock Icons', 'Battle Pets'},
 		packtype = 'Murlocs',
@@ -18,6 +23,11 @@ local iconList = {
 		pack = {'Stock Icons', 'Battle Pets'},
 		packtype = 'Murlocs',
 		name = 'Gillvanas',
+	},
+	['Battle Pets - Murloc - Glimr'] = {
+		pack = {'Stock Icons', 'Battle Pets'},
+		packtype = 'Murlocs',
+		name = 'Glimr',
 	},
 	['Battle Pets - Murloc - KnightCaptain Murky'] = {
 		pack = {'Stock Icons', 'Battle Pets'},
@@ -29,10 +39,20 @@ local iconList = {
 		packtype = 'Murlocs',
 		name = 'Legionnaire Murky',
 	},
+	['Battle Pets - Murloc - Murgle'] = {
+		pack = {'Stock Icons', 'Battle Pets'},
+		packtype = 'Murlocs',
+		name = 'Murgle',
+	},
 	['Battle Pets - Murloc - Murkidan'] = {
 		pack = {'Stock Icons', 'Battle Pets'},
 		packtype = 'Murlocs',
 		name = 'Murkidan',
+	},
+	['Battle Pets - Murloc - Squirky'] = {
+		pack = {'Stock Icons', 'Battle Pets'},
+		packtype = 'Murlocs',
+		name = 'Squirky',
 	},
 	--! ===========
 	--! | Classes |
