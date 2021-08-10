@@ -126,8 +126,8 @@ function UF:Configure_DynamicStatusIcons(frame)
 end
 
 function DSI:UpdateClassColors(frame)
-	if not frame or not frame.unit then return end
-	local unit = frame.unit
+	if not frame or not frame.unitframeType then return end
+	local unit = frame.unitframeType
 
 	local color = E.db.unitframe.units[unit].DynamicStatusIcons.color
 	if E:CheckClassColor(color.r, color.g, color.b) then
