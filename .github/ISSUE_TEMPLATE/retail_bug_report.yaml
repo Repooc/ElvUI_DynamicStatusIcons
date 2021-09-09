@@ -2,7 +2,7 @@ name: Retail Bug Report
 description: Report a bug in ElvUI for Retail WoW
 title: "[Retail Bug Report] <Title here>"
 # labels: [bug, triage]
-labels: [':bug::question: Bug (Needs Investigation)', ':video_game: Retail']
+labels: [:bug::question: Bug (Needs Investigation), :video_game: Retail]
 # assignees:
 #   - octocat
 body:
