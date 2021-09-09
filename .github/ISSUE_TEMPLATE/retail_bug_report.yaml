@@ -1,7 +1,8 @@
 name: Retail Bug Report
 description: Report a bug in ElvUI for Retail WoW
-title: "[Retail Bug Report] <Title here"
-labels: [bug, triage]
+title: "[Retail Bug Report] <Title here>"
+# labels: [bug, triage]
+labels: [':bug::question: Bug (Needs Investigation)', ':video_game: Retail']
 # assignees:
 #   - octocat
 body:
@@ -46,10 +47,10 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: ElvUI Changelog
-      description: Whenever ElvUI or WoW updates, sometimes there will be changes that need to be made to keep up, make sure to read ElvUI changelog for any changes that may change option behavior.
+      label: ElvUI Changelog/Troubleshooting
+      description: By submitting this issue, you agree you followed our [Troubelshooting Steps](https://urlfortroubleshootingstepshere.com)
       options:
-        - label: I have confirmed that I have the latest version of ElvUI and read the [Changelog](https://changelogurlhere.com).
+        - label: I have confirmed that I have read the [Changelog](https://changelogurlhere.com) and done the [Troubelshooting Steps](https://urlfortroubleshootingstepshere.com).
           required: true
   # - type: checkboxes
   #   id: terms
