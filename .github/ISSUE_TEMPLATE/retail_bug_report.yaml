@@ -37,28 +37,28 @@ body:
       placeholder: "Make sure type the command: /edebug on then test."
     validations:
       required: false
-  - type: textarea
-    id: errors
-    attributes:
-      label: Errors
-      description: If you have any errors, please put them here.
-      render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: ElvUI Changelog
-      description: Whenever ElvUI or WoW updates, sometimes there will be changes that need to be made to keep up, make sure to read ElvUI changelog for any changes that may change option behavior.
-      options:
-        - label: I have confirmed that I have the latest version of ElvUI and read the [Changelog](https://changelogurlhere.com).
-          required: true
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Troubleshooting
-      description: By submitting this issue, you agree you followed our [Troubelshooting Steps](https://urlfortroubleshootingstepshere.com)
-      options:
-        - label: I agree that I followed this project's Troubleshooting Steps
-          required: true
+  # - type: textarea
+  #   id: errors
+  #   attributes:
+  #     label: Errors
+  #     description: If you have any errors, please put them here.
+  #     render: shell
+  # - type: checkboxes
+  #   id: terms
+  #   attributes:
+  #     label: ElvUI Changelog
+  #     description: Whenever ElvUI or WoW updates, sometimes there will be changes that need to be made to keep up, make sure to read ElvUI changelog for any changes that may change option behavior.
+  #     options:
+  #       - label: I have confirmed that I have the latest version of ElvUI and read the [Changelog](https://changelogurlhere.com).
+  #         required: true
+  # - type: checkboxes
+  #   id: terms
+  #   attributes:
+  #     label: Troubleshooting
+  #     description: By submitting this issue, you agree you followed our [Troubelshooting Steps](https://urlfortroubleshootingstepshere.com)
+  #     options:
+  #       - label: I agree that I followed this project's Troubleshooting Steps
+  #         required: true
 # body:
 #   - type: markdown
 #     attributes:
