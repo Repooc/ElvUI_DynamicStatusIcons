@@ -1,10 +1,7 @@
 name: Retail Bug Report
 description: Report a bug in ElvUI for Retail WoW
 title: "[Retail Bug Report] <Title here>"
-# labels: [bug, triage]
 labels: [':bug::question: Bug (Needs Investigation)', ':video_game: Retail']
-# assignees:
-#   - octocat
 body:
   - type: textarea
     id: what-happened
@@ -52,14 +49,14 @@ body:
       options:
         - label: I have confirmed that I have read the [Changelog](https://changelogurlhere.com) and done the [Troubelshooting Steps](https://urlfortroubleshootingstepshere.com).
           required: true
-  # - type: checkboxes
-  #   id: terms
-  #   attributes:
-  #     label: Troubleshooting
-  #     description: By submitting this issue, you agree you followed our [Troubelshooting Steps](https://urlfortroubleshootingstepshere.com)
-  #     options:
-  #       - label: I agree that I followed this project's Troubleshooting Steps
-  #         required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Troubleshooting
+      description: By submitting this issue, you agree you followed our [Troubelshooting Steps](https://urlfortroubleshootingstepshere.com)
+      options:
+        - label: I agree that I followed this project's Troubleshooting Steps
+          required: true
 # body:
 #   - type: markdown
 #     attributes:
