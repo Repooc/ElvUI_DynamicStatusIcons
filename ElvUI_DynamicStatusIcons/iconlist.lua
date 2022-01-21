@@ -486,6 +486,29 @@ local iconList = {
 		packtype = 'Heroes',
 		name = 'Tyrande Whisperwind',
 	},
+	--! =========================
+	--! | Sanctum of Domination |
+	--! =========================
+	['SoD - Pepe - Cloth (Heroic)'] = {
+		pack = {'Classes', 'Gear Sets', 'Stock Icons'},
+		packtype = {'Mage', 'Priest', 'Warlock'},
+		name = 'SoD (H)',
+	},
+	['SoD - Pepe - Cloth (LFR)'] = {
+		pack = {'Classes', 'Gear Sets', 'Stock Icons'},
+		packtype = {'Mage', 'Priest', 'Warlock'},
+		name = 'SoD (LFR)',
+	},
+	['SoD - Pepe - Cloth (Mythic)'] = {
+		pack = {'Classes', 'Gear Sets', 'Stock Icons'},
+		packtype = {'Mage', 'Priest', 'Warlock'},
+		name = 'SoD (M)',
+	},
+	['SoD - Pepe - Cloth (Normal)'] = {
+		pack = {'Classes', 'Gear Sets', 'Stock Icons'},
+		packtype = {'Mage', 'Priest', 'Warlock'},
+		name = 'SoD (N)',
+	},
 }
 
 function DSI:GetIconList()
