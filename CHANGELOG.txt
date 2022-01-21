@@ -2,3 +2,5 @@ v1.08 7/8/2021
 
 Additions:
 - Added option to change frame strata so it can appear over buffs for example
+- Added Sanctum of Domination Cloth Sets
+- Added some Battle Pets (Horde Moonkin Hatchling, Glimr, Murgle, & Squirky Murlocs)
