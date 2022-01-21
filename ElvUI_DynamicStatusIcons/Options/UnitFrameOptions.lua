@@ -2,7 +2,6 @@ local DSI, E, L, V, P, G = unpack(select(2, ...))
 local UF = E:GetModule('UnitFrames')
 
 local tinsert = tinsert
-local supportedFrames = {'player', 'target'}
 local positionValues = {
 	TOPLEFT = 'TOPLEFT',
 	LEFT = 'LEFT',
@@ -130,15 +129,42 @@ function DSI:CreateUpdateIconGallery()
 			if icontbl.valid then
 				if type(icontbl.pack) == 'table' then
 					for _, pack in next, icontbl.pack do
-						if collectPacks[pack] == nil then collectPacks[pack] = {} end
-						if collectPacks[pack][icontbl.packtype] == nil then collectPacks[pack][icontbl.packtype] = {} end
-						collectPacks[pack][icontbl.packtype][iconkey] = E:TextureString(icontbl.path..iconkey..'\\Normal', ':40:40')..' '..icontbl.name
+						if collectPacks[pack] == nil then
+							collectPacks[pack] = {}
+						end
+
+						if type(icontbl.packtype) == 'table' then
+							for _, packType in next, icontbl.packtype do
+								if collectPacks[pack][packType] == nil then
+									collectPacks[pack][packType] = {}
+								end
+								collectPacks[pack][packType][iconkey] = E:TextureString(icontbl.path..iconkey..'\\Normal', ':40:40')..' '..icontbl.name
+							end
+						else
+							if collectPacks[pack][icontbl.packtype] == nil then
+								collectPacks[pack][icontbl.packtype] = {}
+							end
+							collectPacks[pack][icontbl.packtype][iconkey] = E:TextureString(icontbl.path..iconkey..'\\Normal', ':40:40')..' '..icontbl.name
+						end
 					end
 				else
-					if collectPacks[icontbl.pack] == nil then collectPacks[icontbl.pack] = {} end
-					if collectPacks[icontbl.pack][icontbl.packtype] == nil then collectPacks[icontbl.pack][icontbl.packtype] = {} end
+					if collectPacks[icontbl.pack] == nil then
+						collectPacks[icontbl.pack] = {}
+					end
 
-					collectPacks[icontbl.pack][icontbl.packtype][iconkey] = E:TextureString(icontbl.path..iconkey..'\\Normal', ':40:40')..' '..icontbl.name
+					if type(icontbl.packtype) == 'table' then
+						for _, packType in next, icontbl.packtype do
+							if collectPacks[icontbl.pack][packType] == nil then
+								collectPacks[icontbl.pack][packType] = {}
+							end
+							collectPacks[icontbl.pack][packType][iconkey] = E:TextureString(icontbl.path..iconkey..'\\Normal', ':40:40')..' '..icontbl.name
+						end
+					else
+						if collectPacks[icontbl.pack][icontbl.packtype] == nil then
+							collectPacks[icontbl.pack][icontbl.packtype] = {}
+						end
+						collectPacks[icontbl.pack][icontbl.packtype][iconkey] = E:TextureString(icontbl.path..iconkey..'\\Normal', ':40:40')..' '..icontbl.name
+					end
 				end
 			end
 		end
@@ -150,14 +176,7 @@ function DSI:CreateUpdateIconGallery()
 		type = 'description',
 		name = function()
 			local iconpack = E.db.unitframe.units.player.DynamicStatusIcons.iconpack
-
 			local icon = (iconDB[iconpack] and iconDB[iconpack].valid) and iconDB[iconpack].path..iconpack or iconDB['Default - Pepe'].path..'Default - Pepe'
-
-			-- if iconDB[iconpack] and iconDB[iconpack].valid then
-			-- 	icon = iconDB[iconpack].path..iconpack
-			-- else
-			-- 	icon = iconDB['Pepe'].path..'Pepe'
-			-- end
 
 			return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
 		end,
@@ -168,7 +187,6 @@ function DSI:CreateUpdateIconGallery()
 		type = 'description',
 		name = function()
 			local iconpack = E.db.unitframe.units.target.DynamicStatusIcons.iconpack
-
 			local icon = (iconDB[iconpack] and iconDB[iconpack].valid) and iconDB[iconpack].path..iconpack or iconDB['Default - Pepe'].path..'Default - Pepe'
 
 			return E:TextureString(icon..'\\Normal', ':80:80')..E:TextureString(icon..'\\Combat', ':80:80')..E:TextureString(icon..'\\Dead', ':80:80')..E:TextureString(icon..'\\Sleeping', ':80:80')
@@ -188,6 +206,7 @@ function DSI:CreateUpdateIconGallery()
 			name = pack,
 			args = {}
 		}
+
 		for packtype, typetbl in next, packtbl do
 			E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'player', packtype, typetbl)
 			E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons.args.icongallery.args[pack].args[packtype] = GetOptionsTable_IconPacks(UF.CreateAndUpdateUF, 'target', packtype, typetbl)
