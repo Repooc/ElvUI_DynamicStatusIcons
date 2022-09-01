@@ -1,3 +1,3 @@
-v1.09 6/30/2022
+v1.10 8/31/2022
 
-• TOC bump for all wow flavors
+• TOC bump for retail and wrath
