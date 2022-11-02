@@ -14,10 +14,6 @@ Engine[5] = P
 Engine[6] = G
 _G[AddOnName] = Engine
 
--- Check WoW Project ID
--- DSI.Retail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
--- DSI.Classic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
--- DSI.TBC = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
 DSI.Configs = {}
 
 local function GetOptions()
