@@ -15,7 +15,10 @@ jobs:
       CF_URL: https://www.curseforge.com/wow/addons/dynamic-status-icons-elvui-plugin
       WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
       WAGO_URL: https://addons.wago.io/addons/elvui-dynamicstatusicons
-      RR_CHANNEL_ID: "1162287922599436349"
+      RR_AUTHOR_SUPPORT_INFO_NAME: "general-info"
+      RR_AUTHOR_SUPPORT_INFO_URL: "https://discord.com/channels/1162274244487561216/1171940634672767128"
+      RR_ADDON_CHANNEL_NAME: "dynamic-status-icons"
+      RR_ADDON_CHANNEL_URL: "https://discord.com/channels/1162274244487561216/1162287922599436349"
     steps:
       - name: Clone Project
         uses: actions/checkout@v3
@@ -50,8 +53,8 @@ jobs:
 
             If you would like to support me in the work I do, consider supporting me through the [Discord Shop](https://discord.com/servers/repooc-reforged-1162274244487561216)!
 
-            Feel freen to browse the <#1171940634672767128> for others ways to support Repooc!
+            Feel freen to browse the [${{env.RR_AUTHOR_SUPPORT_INFO_NAME}}](${{env.RR_AUTHOR_SUPPORT_INFO_URL}}) channel for others ways to support Repooc!
 
-            You can get the update through Wago or Curse! Links for the addon can be found in <#${{env.RR_CHANNEL_ID}}> channel.
+            You can get the update through Wago or Curse! Links for the addon can be found in [${{env.RR_ADDON_CHANNEL_URL}}](${{env.RR_ADDON_CHANNEL_URL}}) channel.
       - name: Print message id
         run: echo "Message id = ${{ steps.publish-to-discord.outputs.message-id }}"
