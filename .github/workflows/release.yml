@@ -55,6 +55,6 @@ jobs:
 
             If you would like to help support the work I do, consider supporting me via the [Discord Shop](https://discord.com/servers/repooc-reforged-1162274244487561216) or the other various ways listed in the [${{env.RR_AUTHOR_SUPPORT_INFO_NAME}}](<${{env.RR_AUTHOR_SUPPORT_INFO_URL}}>) channel.
 
-            You can get help for the addon in the [${{env.RR_ADDON_CHANNEL_URL}}](${{env.RR_ADDON_CHANNEL_URL}}) support channel!
+            You can get help for the addon in the [${{env.RR_ADDON_CHANNEL_URL}}](<${{env.RR_ADDON_CHANNEL_URL}}>) support channel!
       - name: Print message id
         run: echo "Message id = ${{ steps.publish-to-discord.outputs.message-id }}"
