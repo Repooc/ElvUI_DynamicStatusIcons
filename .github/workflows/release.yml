@@ -38,8 +38,8 @@ jobs:
           description: '[${{ github.event.sender.login }}](${{ github.event.sender.html_url }}) has released a new version of ${{ github.event.repository.name }}!
 
             If you use a wow addon client that can download from either wago addons or curse, then it is recommended that you use that to install/update the addon.  You can update how you see fit, even if you want to download manually and install it, go for it.  The can grab the addon from the links down below.'
-          fields: '[{"name": "Released By:", "value": "[${{ github.event.sender.login }}](${{ github.event.sender.html_url }})", "inline": true}, {"name": "Issue Tracker:", "value": "[${{ github.event.repository.name }}](${{ github.event.repository.html_url }}/issues)", "inline": true}, {"name": "Version", "value": "${{ env.RELEASE_VERSION }}", "inline": true}, {"name": "Wago Addons", "value": "[Click Here](${{ env.WAGO_URL }})", "inline": true}, {"name": "Curseforge", "value": "[Click Here](${{ env.CF_URL }})", "inline": true}]'
-          footer: Addons by Repooc
+          fields: '[{"name": "Released By:", "value": "[${{ github.event.sender.login }}](${{ github.event.sender.html_url }})", "inline": true}, {"name": "Issue Tracker:", "value": "[${{ github.event.repository.name }}](${{ github.event.repository.html_url }}/issues)", "inline": true}, {"name": "Version", "value": "${{ env.RELEASE_VERSION }}", "inline": true}, {"name": "Wago Addons", "value": "[Click Here](${{ env.WAGO_URL }})", "inline": true}, {"name": "Curseforge", "value": "[Click Here](${{ env.CF_URL }})", "inline": true}, {"name": "Changelog", "value": "[Click Here](${{ github.event.repository.html_url }}/CHANGELOG.txt)", "inline": true}]'
+          footer: Repooc Reforged
           timestamp: true
       - name: Publish Announcement
         id: publish-to-discord
@@ -51,10 +51,10 @@ jobs:
           content: |
             **__${{ github.event.repository.name }}__** **v${{ env.RELEASE_VERSION }}** *has been released!*
 
-            If you would like to support me in the work I do, consider supporting me through the [Discord Shop](https://discord.com/servers/repooc-reforged-1162274244487561216)!
+            You can view the changes made by viewing the [changelog](<${{ github.event.repository.html_url }}/CHANGELOG.txt>) here!
 
-            Feel freen to browse the [${{env.RR_AUTHOR_SUPPORT_INFO_NAME}}](${{env.RR_AUTHOR_SUPPORT_INFO_URL}}) channel for others ways to support Repooc!
+            If you would like to help support the work I do, consider supporting me via the [Discord Shop](https://discord.com/servers/repooc-reforged-1162274244487561216) or the other various ways listed in the [${{env.RR_AUTHOR_SUPPORT_INFO_NAME}}](<${{env.RR_AUTHOR_SUPPORT_INFO_URL}}>) channel.
 
-            You can get the update through Wago or Curse! Links for the addon can be found in [${{env.RR_ADDON_CHANNEL_URL}}](${{env.RR_ADDON_CHANNEL_URL}}) channel.
+            You can get help for the addon in the [${{env.RR_ADDON_CHANNEL_URL}}](${{env.RR_ADDON_CHANNEL_URL}}) support channel!
       - name: Print message id
         run: echo "Message id = ${{ steps.publish-to-discord.outputs.message-id }}"
