@@ -1,12 +1,12 @@
 name: Push Commits to Discord Webhook
 on:
   push:
-    branches:
-      - dev
-    tags-ignore:
-        - '**'
     paths-ignore:
       - '.github/**'
+    branches:
+      - dev
+    tags:
+      - "!**"
 jobs:
   Discord_Notification:
     runs-on: ubuntu-latest
