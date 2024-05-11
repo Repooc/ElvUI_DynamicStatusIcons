@@ -4,3 +4,4 @@ manual-changelog:
     markup-type: bbcode
 move-folders:
     ElvUI_DynamicStatusIcons/ElvUI_DynamicStatusIcons: ElvUI_DynamicStatusIcons
+enable-toc-creation: yes
