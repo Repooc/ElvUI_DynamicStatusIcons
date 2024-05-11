@@ -15,7 +15,3 @@ The addon will feature a variety of icons to chose from starting with Pepe. Thes
 ![](https://repooc.github.io/ElvUI_DynamicStatusIcons/images/Default.png)
 ### Pepe Class Icons
 ![](https://repooc.github.io/ElvUI_DynamicStatusIcons/images/Classes.png)
-
-### Unfortunate Circumstances
-One of the Tukui Community staff was a victim of identity fraud and has been put in a bad financial situation.  Darth, one of authors of Shadow & Light addon (another plugin for ElvUI) could use any assistance he can get.  So the person behind the icons of this pack, Releaf, is offering to do some custom pepes for a donation that will be sent to him until he gets back in a good spot.
-Feel free to contact Releaf on Discord @ Releaf#8860
