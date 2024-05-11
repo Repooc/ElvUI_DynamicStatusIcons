@@ -1,7 +1,9 @@
-## Interface: 100200
+## Interface: 100207
+## Interface-Cata: 40400
+## Interface-Classic: 11502
 ## Title: |cff1784d1ElvUI|r |cff9482c9Dynamic Status Icons|r
 ## Author: Repooc, Releaf
-## Version: 1.12
+## Version: 1.13
 ## Notes: Plugin-edit for |cff1784d1ElvUI|r adding additional resting icons.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
