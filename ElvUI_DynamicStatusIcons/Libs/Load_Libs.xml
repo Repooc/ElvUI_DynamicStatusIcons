@@ -1,4 +1,4 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="RepoocReforged-1.0\RepoocReforged-1.0.lua" />
 	<Include file='oUF_DynamicStatusIcons\Load_DynamicStatusIcons.xml'/>
-	<Script file='LibAceConfigHelper\LibAceConfigHelper.lua'/>
 </Ui>

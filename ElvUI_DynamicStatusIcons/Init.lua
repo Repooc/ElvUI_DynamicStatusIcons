@@ -15,6 +15,7 @@ Engine[6] = G
 _G[AddOnName] = Engine
 
 DSI.Configs = {}
+DSI.Options = {}
 
 local function GetOptions()
 	for _, func in pairs(DSI.Configs) do
@@ -50,6 +51,7 @@ function DSI:Initialize()
 	DSI:ConstructElements()
 
 	EP:RegisterPlugin(AddOnName, GetOptions)
+	LibStub('RepoocReforged-1.0'):LoadMainCategory()
 end
 
 E.Libs.EP:HookInitialize(DSI, DSI.Initialize)

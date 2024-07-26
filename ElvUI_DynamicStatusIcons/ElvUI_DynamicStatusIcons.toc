@@ -1,9 +1,9 @@
-## Interface: 100207
+## Interface: 110000
 ## Interface-Cata: 40400
-## Interface-Classic: 11502
+## Interface-Classic: 11503
 ## Title: |cff1784d1ElvUI|r |cff9482c9Dynamic Status Icons|r
 ## Author: Repooc, Releaf
-## Version: 1.13
+## Version: 1.14
 ## Notes: Plugin-edit for |cff1784d1ElvUI|r adding additional resting icons.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
@@ -11,7 +11,7 @@
 ## X-Wago-ID: 2jK8oq6y
 ## IconTexture: Interface\AddOns\ElvUI_DynamicStatusIcons\Logo
 
-Libraries\Load_Libraries.xml
+Libs\Load_Libs.xml
 Init.lua
 Settings\Global.lua
 Settings\Profile.lua
