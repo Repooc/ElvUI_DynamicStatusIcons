@@ -22,6 +22,19 @@ local function GetOptions()
 	end
 end
 
+function DSI:ParseVersionString()
+	local version = GetAddOnMetadata(AddOnName, 'Version')
+	local prevVersion = GetAddOnMetadata(AddOnName, 'X-PreviousVersion')
+	if strfind(version, 'project%-version') then
+		return prevVersion, prevVersion..'-git', nil, true
+	else
+		local release, extra = strmatch(version, '^v?([%d.]+)(.*)')
+		return tonumber(release), release..extra, extra ~= ''
+	end
+end
+
+DSI.version, DSI.versionString, DSI.versionDev, DSI.versionGit = DSI:ParseVersionString()
+
 local txframe = CreateFrame('Frame')
 local tx = txframe:CreateTexture()
 function DSI:TextureExists(path)
@@ -49,7 +62,7 @@ function DSI:Initialize()
 
 	DSI:ConstructElements()
 
-	EP:RegisterPlugin(AddOnName, GetOptions)
+	EP:RegisterPlugin(AddOnName, GetOptions, nil, DSI.versionString)
 	LibStub('RepoocReforged-1.0'):LoadMainCategory()
 end
 
