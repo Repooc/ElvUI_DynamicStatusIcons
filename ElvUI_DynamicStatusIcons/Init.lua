@@ -3,6 +3,7 @@ local EP = LibStub('LibElvUIPlugin-1.0')
 local AddOnName, Engine = ...
 
 local _G = _G
+local GetAddOnMetadata = C_AddOns.GetAddOnMetadata or GetAddOnMetadata
 
 local DSI = E:NewModule(AddOnName, 'AceConsole-3.0', 'AceHook-3.0', 'AceEvent-3.0')
 Engine[1] = DSI
