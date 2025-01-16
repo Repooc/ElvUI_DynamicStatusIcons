@@ -219,7 +219,7 @@ local function configTable()
 
 	E.Options.args.unitframe.args.individualUnits.args.player.args.DynamicStatusIcons = {
 		type = 'group',
-		name = '|c'..myClassColor.colorStr..'Dynamic Status Icons'..'|r',
+		name = gsub(DSI.Title, "^.-|r%s", ""),
 		childGroups = 'tab',
 		get = function(info) return E.db.unitframe.units.player.DynamicStatusIcons[info[#info]] end,
 		set = function(info, value)
@@ -238,7 +238,7 @@ local function configTable()
 
 	E.Options.args.unitframe.args.individualUnits.args.target.args.DynamicStatusIcons = {
 		type = 'group',
-		name = '|c'..myClassColor.colorStr..'Dynamic Status Icons'..'|r',
+		name = gsub(DSI.Title, "^.-|r%s", ""),
 		childGroups = 'tab',
 		get = function(info) return E.db.unitframe.units.target.DynamicStatusIcons[info[#info]] end,
 		set = function(info, value)
