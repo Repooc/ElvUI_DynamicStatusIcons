@@ -29,7 +29,7 @@ end
 local function configTable()
 	local myClassColor = E:ClassColor(E.myclass, true)
 	GetRandomDuo()
-	local dsi = ACH:Group('|c'..myClassColor.colorStr..'Dynamic Status Icons'..'|r', nil, 6, 'tab')
+	local dsi = ACH:Group(gsub(DSI.Title, "^.-|r%s", ""), nil, 6, 'tab')
 	local rrp = E.Options.args.rrp
 
 	if rrp then

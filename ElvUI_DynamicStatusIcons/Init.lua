@@ -16,6 +16,7 @@ _G[AddOnName] = Engine
 
 DSI.Configs = {}
 DSI.Options = {}
+DSI.Title = C_AddOns.GetAddOnMetadata(AddOnName, 'Title')
 
 local function GetOptions()
 	for _, func in pairs(DSI.Configs) do
