@@ -37,9 +37,19 @@ jobs:
         id: check_changes
         run: |
           cd repoocreforged-wiki
-          git diff --quiet || echo "Changes detected"
+          git add src/changelogs/${destination_name}.md
+          if git diff --cached --quiet; then
+            echo "No changes detected"
+            echo "changes=false" >> $GITHUB_ENV
+          else
+            echo "Changes detected"
+            echo "changes=true" >> $GITHUB_ENV
+          fi
+      - name: Debug Check Changes Output
+        run: |
+          echo "Changes detected: ${{ env.changes }}"
       - name: Commit and Push Changes
-        if: steps.check_changes.outputs.diff == 'Changes detected'
+        if: ${{ env.changes == 'true' }}
         run: |
           cd repoocreforged-wiki
           git config --global user.name "GitHub Actions"
@@ -47,5 +57,6 @@ jobs:
           git add .
           git commit -m "Update changelog file for ${repository_name} on tag push: $GITHUB_REF"
           git push origin main
+          curl -X POST ${{ secrets.DEPLOY_WEBSITE }}
         env:
           GITHUB_TOKEN: ${{ secrets.UPDATE_CHANGELOGS }}
