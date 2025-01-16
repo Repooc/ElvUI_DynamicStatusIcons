@@ -2,7 +2,7 @@
 ## Title: |cff1784d1ElvUI|r |cff00FF98D|r|cff09F29Ay|r|cff13E69Dn|r|cff1CDAA0a|r|cff26CEA3m|r|cff2FC2A6i|r|cff39B5A9c|r |cff4C9DAFS|r|cff5691B1t|r|cff5F85B4a|r|cff6979B7t|r|cff736CBAu|r|cff7C60BDs|r |cff8F48C3I|r|cff993CC6c|r|cffA330C9o|r|cffAC23CBn|r|cffB617CEs|r
 ## Author: Repooc, Releaf
 ## Version: @project-version@
-## X-PreviousVersion: 1.19
+## X-PreviousVersion: 1.20
 ## Notes: Plugin-edit for |cff1784d1ElvUI|r adding additional resting icons.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled

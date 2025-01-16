@@ -1,3 +1,3 @@
-v1.19 1/15/2025
+v1.20 1/15/2025
 
-• bump toc
+• title colors adjusted
