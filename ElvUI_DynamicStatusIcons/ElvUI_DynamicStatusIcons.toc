@@ -1,5 +1,5 @@
 ## Interface: 110007, 40401, 11505
-## Title: |cff1784d1ElvUI|r |cff9482c9Dynamic Status Icons|r
+## Title: |cff1784d1ElvUI|r |cff00FF98Dynamic |cffA330C9Status|r |cff00FF98Icons|r
 ## Author: Repooc, Releaf
 ## Version: @project-version@
 ## X-PreviousVersion: 1.19
