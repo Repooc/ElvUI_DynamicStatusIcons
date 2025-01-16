@@ -1,8 +1,8 @@
-## Interface: 110005, 40401, 11505
+## Interface: 110007, 40401, 11505
 ## Title: |cff1784d1ElvUI|r |cff9482c9Dynamic Status Icons|r
 ## Author: Repooc, Releaf
 ## Version: @project-version@
-## X-PreviousVersion: 1.18
+## X-PreviousVersion: 1.19
 ## Notes: Plugin-edit for |cff1784d1ElvUI|r adding additional resting icons.
 ## RequiredDeps: ElvUI
 ## DefaultState: Enabled
